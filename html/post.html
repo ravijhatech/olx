@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post Your Ad</title>
+    <link rel="stylesheet" href="/css/post.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Post your Ad</h2>
+    </header>
+
+    <section class="category-section">
+      <p><strong>SELECTED CATEGORY</strong></p>
+      <p class="path">Cars / Cars <a href="#">Change</a></p>
+    </section>
+
+    <section class="details-section">
+      <h3>INCLUDE SOME DETAILS</h3>
+
+      <label for="brand">Brand *</label>
+      <select id="brand">
+        <option value="">Select Brand</option>
+        <option value="maruti">Maruti</option>
+        <option value="hyundai">Hyundai</option>
+        <option value="honda">Honda</option>
+      </select>
+
+      <label for="year">Year *</label>
+      <input type="text" id="year" placeholder="Enter year" />
+
+      <label>Fuel *</label>
+      <div class="button-group">
+        <button>CNG & Hybrids</button>
+        <button>Diesel</button>
+        <button>Electric</button>
+        <button>LPG</button>
+        <button>Petrol</button>
+      </div>
+
+      <label>Transmission *</label>
+      <div class="button-group">
+        <button>Automatic</button>
+        <button>Manual</button>
+      </div>
+
+      <label for="km">KM driven *</label>
+      <input type="text" id="km" placeholder="Enter kilometers driven" />
+    </section>
+    <section class="form-section">
+      <div class="form-tabs">
+        <button>1st</button>
+        <button>2nd</button>
+        <button>3rd</button>
+        <button>4th</button>
+        <button>4+</button>
+      </div>
+      <label for="title">Ad title *</label>
+      <input type="text" id="textInput" maxlength="70" oninput="charcount()" />
+      <p class="char-count" id="Charcount">0/70</p>
+      <script src="/javascript/post.js"></script>
+
+      <label for="title">Description *</label>
+      <input type="text" id="description" maxlength="4096" oninput="descriptionCount()" />
+      <p class="char-Count" id="DescriptionCount">0/4096</p>
+      <script src="/javascript/post.js"></script>
+
+      <label for="title">SET A PRICE </label>
+      <label for="title">Price *</label>
+      <input type="text" id="textInput" maxlength="70" oninput="charcount()" />
+      <br/><br/><br/>
+      <label for="title">UPLOAD UP TO 20 PHOTOS</label>
+      <div class="photo-grid" id="photoGrid">
+        <label class="photo-slot add-photo">
+          <input type="file" accept="image/*" onchange="handlePhotoUpload(event)" hidden>
+          <span>Add Photo</span>
+        </label>
+      </div>
+
+      <div>
+        <div class="tab-bar">
+          <button class="tab-btn active" onclick="openTab(0)">LIST</button>
+          <button class="tab-btn" onclick="openTab(1)">CURRENT LOCATION</button>
+          
+        </div>
+      
+        <div class="tab-content active"></div>
+        <div class="tab-content"> </div>
+      
+          <span>CURRENT LOCATION</span>
+        </div>
+        <label for="state">State *</label>
+        <select id="state">
+          <option value="">Select your state</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Bangalore">Bangalore</option>
+        </select>
+        <p id="stateError" class="error">This field is mandatory</p>
+      
+        <h2>REVIEW YOUR DETAILS</h2>
+        <div class="profile">
+          <img src="https://cdn-icons-png.flaticon.com/128/3048/3048122.png" alt="Profile">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="inputname" maxlength="30" value=" "  oninput="NameCount()"  />
+            <div id="name">0/ 30</div>
+          </div>
+        </div>
+      
+        <h3>Let's verify your account</h3>
+        <p>We will send you a confirmation code by SMS on the next step.</p>
+        <label for="phone">Mobile Phone Number *</label>
+        <input type="text" id="phone" placeholder="+91" />
+      
+       <div class="btn1" >
+        <button class="btn" onclick="submitForm()">Post now</button>
+       </div>
+      </div>
+     
+    </section>
+  </body>
+</html>
